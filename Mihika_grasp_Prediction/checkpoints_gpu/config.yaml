@@ -1,0 +1,23 @@
+seed: 42
+data:
+  root: data/cornell
+  input_mode: rgbd
+  image_size: 300
+  val_split: 0.15
+  test_split: 0.15
+  num_workers: 0
+  augment: true
+training:
+  epochs: 100
+  batch_size: 8
+  learning_rate: 0.001
+  weight_decay: 1.0e-05
+  checkpoint_dir: checkpoints_gpu
+  log_path: outputs/train_log_gpu.csv
+loss:
+  quality_weight: 1.0
+  angle_weight: 1.0
+  width_weight: 0.5
+evaluation:
+  iou_threshold: 0.25
+  angle_threshold_degrees: 30.0
